@@ -1,1 +1,5 @@
-SELECT COUNT(order_id) from orders o JOIN order_items i ON (o.order_id=i.order_id) GROUP BY store_id
+SELECT COUNT(orders.order_id), brands.brand_name, stores.store_name from orders  
+JOIN order_items ON (orders.order_id=order_items.order_id) 
+JOIN products ON (products.product_id=order_items.product_id) 
+JOIN brands b ON (products.brand_id=brans.brand_id) 
+GROUP BY store_id
