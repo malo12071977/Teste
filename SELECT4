@@ -1,0 +1,1 @@
+SELECT COUNT(order_id) from orders o JOIN order_items i ON (o.order_id=i.order_id) GROUP BY store_id
